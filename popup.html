@@ -1,23 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hitz Popup Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitz Popup</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .popup {
+            position: fixed;
+            top: 5%;
+            left: 5%;
+            width: 90%;
+            height: 90%;
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(0,0,0,0.7);
+        }
+
+        .popup-header {
+            height: 50px;
+            background: #222;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .popup-header span {
+            font-weight: bold;
+        }
+
+        .close {
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100% - 50px);
+            border: none;
+        }
+    </style>
 </head>
 
 <body>
 
-<script>
-window.onload = function() {
-    window.open(
-        "https://tomgorretti-maker.github.io/hitz-image/",
-        "_blank",
-        "width=500,height=700"
-    );
-};
-</script>
+<div class="popup" id="popup">
 
-<h2>Hitz Popup Test</h2>
-<p>If your browser allows automatic popups, the Hitz homepage should open.</p>
+    <div class="popup-header">
+        <span>Hitz</span>
+        <span class="close" onclick="closePopup()">✕</span>
+    </div>
+
+    <iframe src="index.html"></iframe>
+
+</div>
+
+<script>
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
