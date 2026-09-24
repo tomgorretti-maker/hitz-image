@@ -1,10 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Something For You</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                radial-gradient(circle at top left, #e8e8e8, transparent 40%),
+                radial-gradient(circle at bottom right, #d8d8d8, transparent 40%),
+                #f5f5f5;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 25px;
+            color: #222;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            text-align: center;
+        }
+
+        .greeting {
+            font-size: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #777;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin: 0 0 25px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 30px;
+            border-radius: 24px;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.12);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .message {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+            margin: 0 0 25px;
+        }
+
+        .message strong {
+            color: #222;
+        }
+
+        .photo-link {
+            display: block;
+            overflow: hidden;
+            border-radius: 18px;
+            text-decoration: none;
+        }
+
+        .photo {
+            width: 100%;
+            display: block;
+            border-radius: 18px;
+
+            transition:
+                transform 0.4s ease,
+                filter 0.4s ease;
+        }
+
+        .photo-link:hover .photo {
+            transform: scale(1.04);
+            filter: brightness(0.9);
+        }
+
+        .hint {
+            font-size: 13px;
+            color: #888;
+            margin-top: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+
+            padding: 13px 25px;
+
+            background: #222;
+            color: white;
+
+            border-radius: 50px;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background: #444;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 18px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
 <body>
 
-<a href="https://photos.google.com/albums">
-    <img src="Hitz.jpg" width="500">
-</a>
+    <div class="container">
+
+        <div class="greeting">
+            Welcome
+        </div>
+
+        <h1>Gorretti Tom</h1>
+
+        <div class="card">
+
+            <p class="message">
+                <strong>Catherine Tom</strong> created an album filled
+                with collections of her favorite videos and pictures,
+                2 years ago.
+                <br><br>
+                We thought you might wanna know.
+            </p>
+
+            <a
+                href="https://photos.google.com/albums"
+                class="photo-link"
+            >
+                <img
+                    src="Hitz.jpg"
+                    alt="Hitz"
+                    class="photo"
+                >
+            </a>
+
+            <div class="hint">
+                Tap the image to view the collection
+            </div>
+
+            <a
+                href="https://photos.google.com/albums"
+                class="button"
+            >
+                View Albums
+            </a>
+
+        </div>
+
+        <div class="footer">
+            A little something worth knowing.
+        </div>
+
+    </div>
 
 </body>
 </html>
